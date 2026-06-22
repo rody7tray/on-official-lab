@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专题｜世界杯 · 杂志风介绍页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f3ef;
+      color: #1e1e1e;
+      line-height: 1.7;
+    }
+
+    /* hero 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #121212 0%, #2a2a2a 100%);
+      padding: 6rem 1.5rem 4.5rem;
+      text-align: center;
+      color: #eae7df;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #d4af37, #f2d887, #d4af37);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .hero .sub {
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.85;
+      font-weight: 300;
+      border-top: 1px solid rgba(255,255,240,0.15);
+      padding-top: 1.2rem;
+    }
+
+    /* 主内容区：浅色背景，卡片式段落 */
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 2.2rem 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 12px 28px -12px rgba(0,0,0,0.08);
+      margin-bottom: 2.2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .card h2 {
+      font-size: 1.7rem;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      margin-bottom: 1.1rem;
+      color: #1f2a36;
+      border-left: 6px solid #c8a951;
+      padding-left: 1rem;
+    }
+
+    .card p {
+      margin-bottom: 1.2rem;
+      color: #2c2c2c;
+      font-size: 1.025rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 强调色，用于链接 */
+    a {
+      color: #b8862d;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.2s, color 0.2s;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: #7a5f25;
+      border-bottom: 1px solid #b8862d;
+    }
+
+    /* 页尾提示 */
+    .footer-note {
+      background: #eae7e0;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #3f3f3f;
+      border-top: 1px solid #d6cec2;
+    }
+
+    .footer-note p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-note .muted {
+      opacity: 0.6;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 4rem 1.2rem 3rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+      }
+
+      .hero .sub {
+        font-size: 1rem;
+      }
+
+      .container {
+        padding: 2rem 1rem 3rem;
+      }
+
+      .card {
+        padding: 1.6rem 1.2rem;
+        border-radius: 16px;
+      }
+
+      .card h2 {
+        font-size: 1.4rem;
+        padding-left: 0.8rem;
+      }
+
+      .card p {
+        font-size: 0.98rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .card h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图横幅 -->
+  <section class="hero">
+    <h1>世界杯 · 专题</h1>
+    <div class="sub">绿茵、激情与记忆——一个关于赛事与内容的安静角落</div>
+  </section>
+
+  <!-- 三篇自然介绍，杂志式卡片 -->
+  <div class="container">
+
+    <div class="card">
+      <h2>从热爱到整理</h2>
+      <p>很多年里，世界杯对我来说就是日历上打了红圈的日子。朋友聚在一起看球，争论某个越位，或者为一脚远射拍红手掌。后来慢慢觉得，如果有一个地方能把这些年积攒的赛程信息、球队故事、经典瞬间都归拢起来，看起来会更方便，也更踏实。于是就有了 <a href="https://main-shijiebei26.com">世界杯</a> 这个站点——没有花哨的噱头，只是把资料整理得干净一些，让同样喜欢这项赛事的人能顺手翻翻。</p>
+    </div>
+
+    <div class="card">
+      <h2>内容与可信的考量</h2>
+      <p>网络上关于世界杯的信息非常多，但有时反而容易混乱。这个页面背后的想法很简单：在信息筛选上多花一点功夫，尽量采用可查证的来源，同时对不确定的数据做标注。比如赛程时间、历史战绩、举办国背景这些基础内容，都经过核对。站点本身不做预测、不引导投注，也不渲染情绪，就安安静静地把关于<a href="https://main-shijiebei26.com">世界杯</a>的脉络呈现出来。如果你在寻找一个相对可靠、没有浮夸广告的参考页面，这里或许能帮上一点小忙。</p>
+    </div>
+
+    <div class="card">
+      <h2>适合哪些场景</h2>
+      <p>无论是赛前简单查一下小组对阵，还是半夜看完球想回顾某支球队的晋级之路，又或者只是想找个地方安静地浏览历届冠军和经典进球——整个站点都围绕这些日常需求设计。没有弹窗，没有自动播放的视频，也不会突然跳转到别的地方。页面加载快，字体清楚，用手机或电脑看都挺舒服。如果你也喜欢足球世界里那些真实的细节，不妨把 <a href="https://main-shijiebei26.com">世界杯</a> 放进书签，下次聊球的时候也许用得上。</p>
+    </div>
+
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <footer class="footer-note">
+    <p>以上内容均为独立整理的赛事介绍，所有信息仅供个人参考。如有兴趣深入了解，欢迎前往我们的主要页面。</p>
+    <p class="muted">— 保持简单，保持真实 —</p>
+  </footer>
+
+</body>
+</html>
