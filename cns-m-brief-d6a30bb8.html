@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 世界杯 · 竞技前瞻与赛事解读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f6f9;
+            color: #1e2b3c;
+            line-height: 1.6;
+        }
+
+        /* ===== Hero 区：深色头图 ===== */
+        .hero {
+            background: linear-gradient(145deg, #0b1728 0%, #1a2f44 70%, #203b56 100%);
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+            color: #eef2f5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 70%;
+            height: 180%;
+            background: radial-gradient(circle at 30% 40%, rgba(60,130,220,0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.6rem;
+            position: relative;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            opacity: 0.75;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            padding: 0.4rem 1.4rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        /* ===== 正文区域 ===== */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.8rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 550;
+            margin-bottom: 1.8rem;
+            color: #0b1b2a;
+            border-left: 6px solid #1d6fa5;
+            padding-left: 1.2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            box-shadow: 0 8px 24px rgba(0,20,40,0.04);
+            transition: box-shadow 0.2s ease, transform 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 14px 36px rgba(0,20,50,0.08);
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 550;
+            margin-bottom: 0.8rem;
+            color: #0a253b;
+        }
+
+        .card p {
+            color: #2c4055;
+            font-size: 0.98rem;
+        }
+
+        .card .icon-em {
+            display: inline-block;
+            font-size: 1.6rem;
+            margin-right: 0.2rem;
+            vertical-align: middle;
+        }
+
+        .highlight-link {
+            color: #1a6ea8;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(26,110,168,0.25);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .highlight-link:hover {
+            color: #0d4b77;
+            border-bottom-color: #0d4b77;
+        }
+
+        /* ===== 说明区 ===== */
+        .intro-block {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.5rem 2.8rem;
+            margin: 1rem 0 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+        }
+
+        .intro-block p {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            color: #1f344a;
+        }
+
+        .intro-block strong {
+            color: #0a2a42;
+        }
+
+        /* ===== FAQ 摘要 ===== */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 18px;
+            padding: 1.6rem 1.8rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.02);
+        }
+
+        .faq-item h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #152b3d;
+        }
+
+        .faq-item p {
+            font-size: 0.92rem;
+            color: #385066;
+        }
+
+        .faq-summary-link {
+            margin-top: 1.8rem;
+            text-align: right;
+            font-size: 0.95rem;
+        }
+
+        /* ===== 底部 ===== */
+        .footer {
+            border-top: 1px solid #dce3ec;
+            background: #fafbfd;
+            padding: 2.8rem 2rem;
+            text-align: center;
+            color: #4b627b;
+        }
+
+        .footer a {
+            color: #1a6ea8;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer small {
+            display: block;
+            margin-top: 1.2rem;
+            font-size: 0.8rem;
+            opacity: 0.65;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 780px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .sub { font-size: 1rem; }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .intro-block {
+                padding: 1.8rem 1.5rem;
+            }
+
+            section {
+                padding: 2.8rem 0;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding: 4rem 1.2rem 3rem; }
+            .container { padding: 0 1rem; }
+            .section-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero 区 -->
+<header class="hero">
+    <h1>世界杯 · 竞逐与叙事</h1>
+    <p class="sub">从预选赛到决赛圈，解读每一条脉络</p>
+    <span class="tagline">2026 · 北美洲  &nbsp;|&nbsp;  48 支队伍</span>
+</header>
+
+<main class="container">
+
+    <!-- 优势区 / 竞技特点 -->
+    <section>
+        <h2 class="section-title">赛事结构与看点</h2>
+        <div class="grid-2">
+            <div class="card">
+                <div class="icon-em">🏆</div>
+                <h3>扩军后的新格局</h3>
+                <p>48 队分为 16 组，小组前两名晋级 32 强。新增淘汰轮次使比赛密度与悬念同步提升，各洲名额重新分配也让竞争更加多元。</p>
+            </div>
+            <div class="card">
+                <div class="icon-em">🌍</div>
+                <h3>跨洲合办与时区</h3>
+                <p>美国、加拿大、墨西哥三国联合承办，覆盖西部、中部、东部三个时区。比赛时间分布将影响球队备战与全球观众的观赛节奏。</p>
+            </div>
+            <div class="card">
+                <div class="icon-em">📊</div>
+                <h3>数据与战术演变</h3>
+                <p>高强度压迫与快速转换仍是主流，但高位防线与控球结构的风险正在被重新评估。球员负荷管理也成为团队战略的一环。</p>
+            </div>
+            <div class="card">
+                <div class="icon-em">⚡</div>
+                <h3>新秀与老将交替</h3>
+                <p>一批 2005-2006 年龄段球员将在 2026 年进入成熟期，而多位 80 末、90 初核心球员可能迎来大赛谢幕。世代更替的背景为赛场增加复杂叙事。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区：主题展开 + 嵌入链接 -->
+    <section>
+        <h2 class="section-title">从资格赛到决赛</h2>
+        <div class="intro-block">
+            <p><strong>世界杯</strong> 从来不只是六十四场比赛的集合。每届赛事背后，是四年周期内各队战术体系的磨合、球员状态的波动，以及外部环境的干扰。2026 年北美世界杯的预选赛阶段已于 2023 年陆续展开，南美、亚洲、非洲的竞争强度明显高于往届——更多决赛圈名额意味着更多边缘球队参与真实博弈，而非仅仅扮演过客。</p>
+            <p>如果希望获取赛程、分组抽签进度以及各队大名单动态，可以参考 <a class="highlight-link" href="https://cns-m-worldcup.com">世界杯</a> 信息聚合页。该页面持续更新资格赛积分、热身赛安排以及各赛区出线形势分析。内容基于公开数据与赛事机构公告整理，适合用作快速查证与背景补充。</p>
+            <p style="margin-top: 0.8rem;">从比赛用球到球场空调系统，从 VAR 干预标准到换人名额调整，每届细节变动都可能影响夺冠概率。保持对规则文本的关注，同样是理解现代世界杯的必修课。</p>
+        </div>
+    </section>
+
+    <!-- FAQ 摘要区 -->
+    <section>
+        <h2 class="section-title">常见问题摘要</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4>2026 世界杯何时开始？</h4>
+                <p>预定的开幕时间为 2026 年 6 月中旬，决赛于 7 月 19 日举行。具体赛程表将在 2025 年底抽签分组后正式公布。</p>
+            </div>
+            <div class="faq-item">
+                <h4>哪些球队已确定出线？</h4>
+                <p>截至 2025 年 3 月，大部分洲的预选赛仍在进行。东道主美国、墨西哥、加拿大自动晋级，其他席位将在 2025 年末至 2026 年初确定。</p>
+            </div>
+            <div class="faq-item">
+                <h4>比赛场地分布如何？</h4>
+                <p>16 座球场分布于三国 16 座城市，从西雅图到墨西哥城，从多伦多到洛杉矶。其中半数球场曾举办过大型足球赛事，部分场馆为新建或全面翻新。</p>
+            </div>
+            <div class="faq-item">
+                <h4>单场换人名额有变化吗？</h4>
+                <p>国际足联已确认世界杯将继续使用每场最多 5 次换人名额（加时赛额外 1 次），与近两届大赛规则一致。</p>
+            </div>
+        </div>
+        <div class="faq-summary-link">
+            更多细节可查阅 <a class="highlight-link" href="https://cns-m-worldcup.com">世界杯</a> 官方赛事信息页。
+        </div>
+    </section>
+
+</main>
+
+<!-- 底部链接 -->
+<footer class="footer">
+    <p>数据来源：FIFA 公告 · 各足协官方渠道 · 赛事媒体手册</p>
+    <p style="margin-top: 0.5rem;">
+        <a href="https://cns-m-worldcup.com">世界杯</a> · 赛事动态聚合
+    </p>
+    <small>本页面仅为信息介绍，不涉及博彩或盈利性引导。内容更新截至 2025 年 4 月。</small>
+</footer>
+
+</body>
+</html>
