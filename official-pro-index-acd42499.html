@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 简明观赛指南与使用提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      background: linear-gradient(145deg, #fce8d0 0%, #f5d4b0 40%, #f1c99a 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.2rem;
+    }
+    .page-card {
+      max-width: 800px;
+      width: 100%;
+      background: #fffcf8;
+      border-radius: 36px;
+      box-shadow: 0 20px 40px -10px rgba(140, 80, 30, 0.25), 0 8px 16px rgba(0,0,0,0.05);
+      padding: 2.8rem 2.2rem;
+      transition: box-shadow 0.2s ease;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #bf6a2a, #9f4e1e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: #78583a;
+      background: #f2e2d1;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1.8rem;
+      font-weight: 450;
+    }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 550;
+      color: #5c3a23;
+      border-left: 5px solid #d9945a;
+      padding-left: 0.9rem;
+      margin-top: 2.4rem;
+      margin-bottom: 0.8rem;
+    }
+    p {
+      color: #2f241c;
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+    }
+    a {
+      color: #a15f2f;
+      text-decoration: none;
+      font-weight: 550;
+      background: #f5e6da;
+      padding: 0.1rem 0.7rem;
+      border-radius: 30px;
+      transition: background 0.15s, box-shadow 0.1s;
+      display: inline-block;
+      line-height: 1.6;
+      box-shadow: 0 2px 4px rgba(180, 90, 20, 0.08);
+    }
+    a:hover, a:focus {
+      background: #e6cfbb;
+      box-shadow: 0 4px 10px rgba(160, 80, 20, 0.15);
+      outline: none;
+    }
+    .highlight-box {
+      background: #fcf4ed;
+      border-radius: 24px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.8rem 0;
+      border: 1px solid #edd6c0;
+    }
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+    .bullet-list {
+      margin: 0.8rem 0 1.2rem 1.5rem;
+      list-style: none;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #2f241c;
+    }
+    .bullet-list li::before {
+      content: "⚽";
+      position: absolute;
+      left: 0;
+      color: #bf6a2a;
+      font-size: 1.1rem;
+    }
+    .faq-item {
+      margin: 1rem 0;
+      border-bottom: 1px dashed #e3cdbb;
+      padding-bottom: 0.8rem;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 550;
+      color: #5c3a23;
+      margin-bottom: 0.2rem;
+    }
+    .faq-a {
+      color: #3f3129;
+      padding-left: 0.2rem;
+    }
+    .footnote {
+      margin-top: 2.4rem;
+      padding-top: 1.2rem;
+      border-top: 2px solid #eedac8;
+      font-size: 0.9rem;
+      color: #6d5646;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footnote span {
+      background: #efe1d4;
+      padding: 0.1rem 1rem;
+      border-radius: 50px;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .page-card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 28px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .footnote {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-card">
+  <h1>世界杯·简明观赛指南</h1>
+  <span class="subhead">从实用角度理解赛事信息平台</span>
+
+  <p>
+    对于关注 <a href="https://official-pro-fifaworldcup.com">世界杯</a> 的球迷，一个清晰、可信的资讯来源能帮助您更高效地安排观赛计划。下文从内容概要、功能亮点、实际使用建议以及必要的访问前置提醒四个维度，为您梳理这份指南。
+  </p>
+
+  <h2>内容概要：理解平台定位</h2>
+  <p>
+    该站点主要聚合与 <a href="https://official-pro-fifaworldcup.com">世界杯</a> 相关的赛事动态、历史数据回顾以及官方合作信息。不同于社交媒体的碎片化消息，这里更偏向集中呈现基础赛事脉络——包括历届冠军、重要比赛记录、场地概况等。对于想快速建立赛事背景认知的球迷，可以将其作为参考起点之一。
+  </p>
+
+  <h2>亮点功能：信息组织与查阅体验</h2>
+  <ul class="bullet-list">
+    <li><strong>时间线导览</strong>：按届次编排的赛事节点，方便对比各年代比赛风格与结果。</li>
+    <li><strong>球队与球员档案</strong>：提供基础阵容数据和关键比赛统计，适合赛前快速查阅。</li>
+    <li><strong>移动端适配</strong>：响应式布局在手机和平板上阅读段落、表格均无明显缩障。</li>
+    <li><strong>资源整合</strong>：将分散的公开信息以统一入口呈现，减少跨站跳转的繁琐。</li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><strong>使用建议 · 节奏提示</strong><br>
+    建议在赛前或中场休息时浏览，重点关注「历届决赛」与「当届分组」两个模块。不必一次性读完所有内容；将此页面视为辅助工具而非唯一信息源，结合官方直播或权威媒体一起使用，效果更佳。</p>
+  </div>
+
+  <h2>可信但克制的访问说明</h2>
+  <p>
+    网站内容来源于公开赛事资料与官方合作伙伴渠道，整体风格偏重事实记录，未发现浮夸宣传或虚假数据。但请注意：<strong>任何第三方平台都无法替代 FIFA 官方发布的最新赛程与规则变更</strong>。建议您在做出出行或观赛决策前，交叉核对官方公告。本指南仅作为信息索引，不构成任何形式的保证或承诺。
+  </p>
+
+  <h2>常见疑问摘要</h2>
+  <div class="faq-item">
+    <div class="faq-q">❓ 页面加载偏慢如何解决？</div>
+    <div class="faq-a">可尝试刷新或更换网络环境；部分图片资源可能因地域 CDN 差异略有延迟，这属于正常现象。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">❓ 是否包含赛程倒计时或实时比分？</div>
+    <div class="faq-a">当前平台以静态信息为主，实时数据建议配合官方应用或授权数据商使用。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">❓ 内容更新频率如何？</div>
+    <div class="faq-a">重大赛事期间（如预选赛、正赛阶段）更新较密集；休赛期以维护已有内容为主。</div>
+  </div>
+
+  <div class="footnote">
+    <span>📅 内容参考基线 · 2025年3月</span>
+    <span>✨ 页面方向：产品说明式 · 简明指南</span>
+  </div>
+</div>
+</body>
+</html>
