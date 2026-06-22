@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>世界杯 · 轻便导航</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9f8f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      line-height: 1.7;
+      color: #2c2c2e;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 顶部导航 —— 极简行内 */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0 18px;
+      border-bottom: 1px solid #ecebe9;
+      margin-bottom: 48px;
+    }
+
+    .site-header .brand {
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #1a1a1c;
+    }
+
+    .site-header .brand span {
+      color: #a58f7b;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: #4e4e50;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1a1a1c;
+      border-bottom-color: #b5a693;
+    }
+
+    /* hero */
+    .hero {
+      margin: 32px 0 48px;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 450;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #1a1a1c;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #4b4b4d;
+      max-width: 550px;
+    }
+
+    .hero a {
+      color: #8b6f53;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .hero a:hover {
+      color: #5c4733;
+    }
+
+    /* 介绍段落 */
+    .intro-block {
+      margin-bottom: 52px;
+    }
+
+    .intro-block p {
+      margin-bottom: 18px;
+      font-size: 0.98rem;
+    }
+
+    .intro-block strong {
+      font-weight: 500;
+      color: #1f1f21;
+    }
+
+    /* 三个场景模块 (卡片简洁) */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    @media (max-width: 600px) {
+      .scene-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 28px 22px 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03), 0 4px 16px rgba(0,0,0,0.02);
+      transition: box-shadow 0.25s, transform 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      transform: translateY(-2px);
+    }
+
+    .scene-card h3 {
+      font-size: 1.2rem;
+      font-weight: 480;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      color: #1d1d1f;
+      border-left: 3px solid #c7b7a4;
+      padding-left: 12px;
+    }
+
+    .scene-card p {
+      font-size: 0.92rem;
+      color: #4a4a4c;
+      line-height: 1.6;
+    }
+
+    /* 常见说明 (折叠风格但保留文案) */
+    .faq-section {
+      margin: 40px 0 56px;
+    }
+
+    .faq-section h2 {
+      font-size: 1.5rem;
+      font-weight: 430;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      color: #1c1c1e;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e5e3e0;
+      padding: 16px 0;
+    }
+
+    .faq-item:first-of-type {
+      border-top: 1px solid #e5e3e0;
+    }
+
+    .faq-question {
+      font-weight: 470;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #2d2d2f;
+      cursor: default;
+    }
+
+    .faq-question::after {
+      content: "﹀";
+      font-size: 1rem;
+      color: #a99886;
+      transition: transform 0.2s;
+    }
+
+    .faq-answer {
+      margin-top: 8px;
+      font-size: 0.92rem;
+      color: #5b5b5d;
+      line-height: 1.6;
+      padding-right: 20px;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      border-top: 1px solid #ecebe9;
+      padding: 32px 0 40px;
+      font-size: 0.85rem;
+      color: #78787a;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .site-footer a {
+      color: #6b5d4f;
+      text-decoration: none;
+      border-bottom: 1px dotted #cdc2b6;
+    }
+
+    .site-footer a:hover {
+      border-bottom-color: #8f7d6a;
+    }
+
+    .footer-meta {
+      margin-top: 4px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #efedea;
+      margin: 30px 0 18px;
+    }
+
+    /* 辅助 */
+    .text-sm {
+      font-size: 0.9rem;
+    }
+
+    .mt-2 {
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <div class="brand">⚽ <span>·</span> 再次相遇</div>
+    <div class="nav-links">
+      <a href="#scene">场景</a>
+      <a href="#faq">说明</a>
+      <a href="#foot">关于</a>
+    </div>
+  </header>
+
+  <!-- hero 区域：从再次访问和收藏切入 -->
+  <section class="hero">
+    <h1>下次来，不必再找</h1>
+    <p>
+      这里一直是那个你熟悉的关于 <a href="https://portal-pro-shijiebei.com">世界杯</a> 的地方。
+      页面保持轻快，没有多余的跳转，适合收藏之后随时回来再看一眼。
+    </p>
+  </section>
+
+  <!-- 核心介绍：为什么值得收藏和持续关注 -->
+  <div class="intro-block">
+    <p>
+      很多人把链接放进书签夹，然后很久都不再打开——但 <strong>portal-pro-shijiebei.com</strong> 不太一样。
+      它的页面结构清晰，每次访问都能很快找到赛程要点、历史片段和当下焦点。<strong>把网址收藏起来</strong>，
+      下一次想聊到某个经典进球、或者想知道下一轮对阵时间，直接打开就行。
+    </p>
+    <p>
+      我们持续整理与 <a href="https://portal-pro-shijiebei.com" style="color:#8b6f53; text-decoration:underline; text-underline-offset:3px;">世界杯</a> 相关的信息块，
+      不追求花哨动效，只希望你再次回来的时候，既不觉得陌生，又能发现一点新东西。
+    </p>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <section id="scene" class="scene-grid">
+    <div class="scene-card">
+      <h3>📌 收藏后快速回看</h3>
+      <p>把链接添加到浏览器书签或主屏幕，每次想回顾经典比赛、查看实时战报，两步之内就能抵达。不用反复搜索，减少信息噪音。</p>
+    </div>
+    <div class="scene-card">
+      <h3>🔄 间歇性关注</h3>
+      <p>世界杯赛季之外，你未必每天都需要打开；但每隔几周回来扫一眼，会发现页面里保留了值得回味的摘要、数据以及那些让人会心一笑的记忆点。</p>
+    </div>
+    <div class="scene-card">
+      <h3>📋 轻量参考</h3>
+      <p>小组赛阶段、淘汰赛对阵、历史夺冠记录……所有内容都整合在干净的版式里。没有弹窗干扰，适合在通勤或午休时快速浏览。</p>
+    </div>
+  </section>
+
+  <!-- 常见说明 FAQ 摘要 -->
+  <section id="faq" class="faq-section">
+    <h2>一些常见说明</h2>
+    <div class="faq-item">
+      <div class="faq-question">这个页面会频繁更新吗？</div>
+      <div class="faq-answer">内容会根据大赛周期和事实性信息做调整，平时保持稳定，避免信息过载。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">我收藏之后能离线阅读吗？</div>
+      <div class="faq-answer">建议在有网络时加载一次；页面体积很小，浏览器缓存后再次打开几乎无延迟。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">为什么是「世界杯」而不是其他名称？</div>
+      <div class="faq-answer">因为这是最直接的称呼，也是大家提到这项赛事时最先想到的词语。<a href="https://portal-pro-shijiebei.com" style="color:#6b5d4f; border-bottom:1px dotted #cdc2b6; text-decoration:none;">世界杯</a> 三个字足以唤起共同的记忆和期待。</div>
+    </div>
+  </section>
+
+  <!-- 底部 / 再次强调收藏与持续关注 -->
+  <footer id="foot" class="site-footer">
+    <div>
+      <span>⏺ 把地址留在手边</span>
+    </div>
+    <div class="footer-meta">
+      <a href="https://portal-pro-shijiebei.com">世界杯</a> · 持续关注
+    </div>
+  </footer>
+
+  <!-- 极简占位，保持内容自然 -->
+  <hr>
+  <p style="font-size:0.82rem; color:#8e8e8e; padding-bottom:20px; text-align:center; letter-spacing:0.02em;">
+    页面内容仅供介绍，信息均来自公开资料 · 轻量导航版
+  </p>
+</div>
+</body>
+</html>
