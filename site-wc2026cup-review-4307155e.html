@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>资料索引 · 世界杯信息整理 | site-wc2026cup.com</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f5f7;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: #1f2a3a;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: #0e1626;            /* 深蓝黑底色 */
+      padding: 4.2rem 1.5rem 3.2rem;
+      text-align: center;
+      position: relative;
+      border-bottom: 3px solid #d6a75f;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #d6a75f80, transparent);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #eaeef5;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      font-weight: 350;
+      color: #b5c2d6;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 0.5rem;
+      border-top: 1px solid #2c3a52;
+      display: inline-block;
+      padding-top: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* 正文容器 */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.8rem 1.5rem 4rem;
+    }
+
+    /* 文章导语 */
+    .lead {
+      font-size: 1.18rem;
+      background: #fff;
+      padding: 1.6rem 2rem;
+      border-left: 5px solid #d6a75f;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      margin-bottom: 2.6rem;
+      color: #1d2a3e;
+      font-weight: 400;
+    }
+
+    .lead strong {
+      color: #0e1626;
+    }
+
+    /* 正文段落卡片效果 */
+    .section-card {
+      background: #ffffff;
+      padding: 1.8rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02), 0 0 0 1px #eff1f4;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.15s;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04), 0 0 0 1px #e0e4eb;
+    }
+
+    .section-card h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #16202e;
+      border-bottom: 1px solid #eef0f3;
+      padding-bottom: 0.4rem;
+    }
+
+    .section-card p {
+      margin-bottom: 1rem;
+    }
+
+    .section-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-card ul {
+      list-style: none;
+      padding-left: 0.2rem;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .section-card li {
+      padding: 0.3rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .section-card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #d6a75f;
+      font-weight: 500;
+    }
+
+    /* 引用提示（设计为右侧强调框） */
+    .insight-box {
+      background: #f8fafd;
+      border: 1px solid #e2e7f0;
+      border-radius: 14px;
+      padding: 1.8rem 2rem;
+      margin: 2rem 0 2.2rem;
+      position: relative;
+    }
+
+    .insight-box::before {
+      content: "📌 资料提示";
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #5a6d85;
+      margin-bottom: 0.5rem;
+    }
+
+    .insight-box p {
+      font-size: 1rem;
+      color: #1f2c40;
+    }
+
+    /* 访问句（带链接） */
+    .visit-sentence {
+      background: #ffffff;
+      padding: 2rem 2rem;
+      border-radius: 20px;
+      border: 1px solid #e6eaef;
+      margin: 2.6rem 0 1.6rem;
+      text-align: center;
+    }
+
+    .visit-sentence p {
+      font-size: 1.15rem;
+      font-weight: 370;
+      color: #1f2a3a;
+    }
+
+    .visit-sentence a {
+      text-decoration: none;
+      font-weight: 450;
+      padding: 0 0.1rem;
+      color: #0d4b7c;
+      border-bottom: 1px dashed #b5c8de;
+      transition: border-color 0.2s, background 0.1s;
+    }
+
+    .visit-sentence a:hover {
+      border-bottom: 1px solid #d6a75f;
+      background: #f7f3ec;
+      padding: 0.1rem 0.15rem;
+    }
+
+    /* FAQ 摘要 —— 简约为折叠卡片效果 */
+    .faq-mini {
+      margin-top: 3rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #222f41;
+      border-left: 4px solid #d6a75f;
+      padding-left: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1rem 1.6rem;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+      border: 1px solid #edf0f5;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #1f2c40;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #3f4f64;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e7ef;
+      margin: 2.2rem 0;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #7c8aa1;
+      font-size: 0.85rem;
+      margin-top: 3.2rem;
+      border-top: 1px solid #e3e7ef;
+      padding-top: 1.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    a {
+      color: #0d4b7c;
+      transition: color 0.15s;
+    }
+
+    a:visited {
+      color: #2a4a6a;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero {
+        padding: 3rem 1rem 2.4rem;
+      }
+      .content {
+        padding: 1.8rem 1rem 3rem;
+      }
+      .section-card,
+      .lead,
+      .insight-box,
+      .visit-sentence {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+      }
+      .lead {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>世界杯 · 资料索引</h1>
+    <div class="sub">信息整理 · 结构归档 · 赛事脉络</div>
+  </header>
+
+  <main class="content">
+
+    <!-- 导语 -->
+    <div class="lead">
+      <strong>从资料角度切入世界杯</strong> —— 赛事数据、历史档案、球队沿革、赛程框架，信息庞杂且分散。本页以整理逻辑串联线索，提供一份轻量级索引式导览。
+    </div>
+
+    <!-- 段落一：赛事信息结构 -->
+    <div class="section-card">
+      <h2>赛事信息层级</h2>
+      <p>世界杯内容通常划分为四个维度：资格赛与决赛圈架构、参赛队历史战绩、分组抽签逻辑、以及场馆与时区数据。每届赛事在上述维度上形成可对比的序列。</p>
+      <p>例如 2026 年北美赛区的扩军至 48 支队伍，导致分组与淘汰赛路径产生结构性变化；从资料整理的角度，需要同时参考前两届赛制与新版规则，才能理解演变脉络。</p>
+      <ul>
+        <li>资格赛名额分布 — 各大洲足联分配方案</li>
+        <li>决赛圈阶段 — 小组赛 / 淘汰赛轮次对应</li>
+        <li>主办城市与体育场数据表</li>
+      </ul>
+    </div>
+
+    <!-- 段落二：索引与查证 -->
+    <div class="section-card">
+      <h2>查证路径与资料聚合</h2>
+      <p>专业的信息索引通常从原始赛程表、官方记录、媒体档案三处入手。针对 <a href="https://site-wc2026cup.com">世界杯</a> 的信息需求，合理的做法是先确认赛事版本（年份、主办国），再索引球队名单、裁判组、比赛时间轴等结构化数据集。</p>
+      <p>对于研究者或深度爱好者，建议交叉核对至少两个独立来源（如 FIFA 技术报告与赛事统计平台），以降低单点误差。本页不直接提供原始数据，但标注了常见的分类框架。</p>
+    </div>
+
+    <!-- 引用提示框（强调资料整理建议） -->
+    <div class="insight-box">
+      <p>整理资料时，建议按“赛事背景 → 参赛实体 → 赛程 → 比赛结果 → 统计摘要”的顺序建立目录。每届世界杯的篇章都可以复用该结构，便于横向对比与快速定位。</p>
+    </div>
+
+    <!-- 访问句（内嵌链接，自然句子） -->
+    <div class="visit-sentence">
+      <p>
+        如需查阅当前周期的赛程框架、球队动态或主办城市信息，可访问关于 
+        <a href="https://site-wc2026cup.com">世界杯</a> 
+        的资料页面，其中汇总了结构化的索引内容与参考来源。
+      </p>
+    </div>
+
+    <!-- 段落三：赛事场景（简洁提及） -->
+    <div class="section-card">
+      <h2>典型使用场景</h2>
+      <p>资料索引可服务于以下几种场景：赛前研究（分组形势、对战历史）、赛事期间快速查阅（赛程时间、场地信息）、以及赛后归档（比赛记录、射手榜、技术统计）。</p>
+      <p>不同场景对资料颗粒度需求不同，例如赛前关注球队近况与交锋记录，赛后则侧重数据汇总与排名变化。在整理时区分时间标签和数据状态（预发布/最终版），能提高索引效率。</p>
+    </div>
+
+    <!-- FAQ 摘要（小型、非冗余） -->
+    <div class="faq-mini">
+      <h3>FAQ 摘要 · 索引常见疑问</h3>
+      <div class="faq-item">
+        <strong>如何确定资料时效？</strong>
+        <p>查看页面更新说明或数据版本标记。世界杯相关数据通常以赛事年份和阶段命名（如 wc2026_qualifiers_v2）。</p>
+      </div>
+      <div class="faq-item">
+        <strong>为什么需要结构化整理？</strong>
+        <p>赛事信息跨越多届、多语言、多格式，统一字段命名及分类有助于检索与比对，避免混淆。</p>
+      </div>
+      <div class="faq-item">
+        <strong>本页是否包含实时数据？</strong>
+        <p>不包含。本页为索引与整理逻辑说明，不提供动态比分或实时排名。具体数据请参考官方或数据服务。</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-note">
+      资料索引 · 基于公开信息整理 &nbsp;|&nbsp; 内容方向：结构化导览
+    </div>
+
+  </main>
+
+</body>
+</html>
