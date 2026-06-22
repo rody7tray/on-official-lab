@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 信息速览与对照参考</title>
+  <meta name="description" content="从日常查询、对照和延伸阅读的角度，提供关于世界杯的结构化摘要与使用提示。">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f6f8fa;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+      color: #e2e8f0;
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 60%;
+      height: 120%;
+      background: radial-gradient(circle at 30% 40%, rgba(59, 130, 246, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 span {
+      font-weight: 700;
+      background: linear-gradient(135deg, #facc15, #f97316);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 1.2rem auto 0;
+      font-size: 1.05rem;
+      color: #94a3b8;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 浅色正文区 */
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 2.4rem 1.5rem 3.5rem;
+    }
+
+    .intro-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.2rem 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      margin-bottom: 2.2rem;
+    }
+
+    .intro-card h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+    }
+
+    .intro-card h2::before {
+      content: '◆ ';
+      color: #f97316;
+      font-weight: 400;
+    }
+
+    .intro-card p {
+      margin-bottom: 0.9rem;
+      color: #334155;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .highlight-item {
+      background: #f1f5f9;
+      border-radius: 16px;
+      padding: 1.2rem 1.4rem;
+      border-left: 4px solid #f97316;
+      transition: background 0.15s;
+    }
+
+    .highlight-item:hover {
+      background: #e9edf2;
+    }
+
+    .highlight-item strong {
+      display: block;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.25rem;
+    }
+
+    .highlight-item span {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    .scenario-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      padding: 0.5rem 0 0.2rem;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 30px;
+      padding: 0.3rem 1.1rem;
+      font-size: 0.9rem;
+      color: #1e293b;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .tip-box {
+      background: #fffbeb;
+      border: 1px solid #fed7aa;
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0 1.8rem;
+    }
+
+    .tip-box h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #9a3412;
+      margin-bottom: 0.6rem;
+    }
+
+    .tip-box p {
+      color: #5c3a1b;
+      font-size: 0.98rem;
+    }
+
+    .faq-mini {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      margin-top: 2rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #0f172a;
+    }
+
+    .faq-item {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-answer {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: #ea580c;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.12s, color 0.12s;
+    }
+
+    a:hover {
+      color: #c2410c;
+      border-bottom-color: #c2410c;
+    }
+
+    .strong-link {
+      color: #d97706;
+    }
+
+    .disclaimer {
+      margin-top: 2.5rem;
+      padding: 1.2rem 1.8rem;
+      background: #f1f5f9;
+      border-radius: 16px;
+      font-size: 0.9rem;
+      color: #64748b;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+
+    .disclaimer a {
+      color: #64748b;
+      border-bottom: 1px dashed #94a3b8;
+    }
+
+    .disclaimer a:hover {
+      color: #1e293b;
+      border-bottom-color: #1e293b;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 0.95rem;
+      }
+      .highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .container {
+        padding: 1.5rem 1rem 2.5rem;
+      }
+      .intro-card, .faq-mini, .tip-box {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 2.5rem 1.2rem 2rem;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .scenario-list li {
+        font-size: 0.82rem;
+        padding: 0.2rem 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>⚽ 围绕 <span>世界杯</span> 的信息速览</h1>
+    <p>从日常查询、对照与延伸阅读出发，一份结构化的赛事参考摘要</p>
+  </header>
+
+  <main class="container">
+    <!-- 摘要卡片 -->
+    <section class="intro-card">
+      <h2>摘要</h2>
+      <p><a href="https://on-official-sjb.com">世界杯</a> 作为跨洲际的足球盛事，早已超越竞技本身，成为全球文化、经济与传播的集中节点。本页面向希望快速理解赛事脉络、对比历届数据、定位延伸内容的读者，提供一份可随时查阅的提纲式参考。内容不替代官方发布，而是作为日常信息检索的起点之一。</p>
+      <p>以下要点均基于公开可查的赛事资料与历史记录整理，适合赛前预习、观赛期间对照或赛后回顾时辅助阅读。</p>
+    </section>
+
+    <!-- 亮点 / 特点 -->
+    <section class="intro-card">
+      <h2>亮点与结构特点</h2>
+      <div class="highlight-grid">
+        <div class="highlight-item">
+          <strong>时间纵深</strong>
+          <span>自1930年首届至今，跨越近百年，涵盖21届正赛（截至2022年）。</span>
+        </div>
+        <div class="highlight-item">
+          <strong>参赛规模</strong>
+          <span>从13支到48支（2026年起），反映全球足球版图的持续演变。</span>
+        </div>
+        <div class="highlight-item">
+          <strong>数据密度</strong>
+          <span>每届产生约64场比赛、超过170粒进球，形成丰富的统计与对照样本。</span>
+        </div>
+        <div class="highlight-item">
+          <strong>文化切面</strong>
+          <span>主办国、比赛用球、主题曲、吉祥物等元素构成独立的流行文化线索。</span>
+        </div>
+      </div>
+      <p style="margin-top: 0.8rem;">这些特点使得 <a href="https://on-official-sjb.com">世界杯</a> 不仅是赛事，更是一个可长期追踪、交叉索引的信息体系。无论是历史排名、进球分布，还是主办城市变迁，都适合按需查阅。</p>
+    </section>
+
+    <!-- 使用建议 + 场景 -->
+    <section class="intro-card">
+      <h2>使用建议与典型场景</h2>
+      <ul class="scenario-list">
+        <li>📋 赛前浏览历届冠军与主办国</li>
+        <li>📊 对比不同年代的金靴进球数</li>
+        <li>🗺️ 梳理赛事扩军与各大洲名额变化</li>
+        <li>📖 延伸阅读经典决赛与名场面背景</li>
+        <li>🔍 快速定位某届赛事的具体数据</li>
+      </ul>
+      <p style="margin-top: 1rem;">建议将本页作为索引层：先通过摘要判断信息方位，再通过 <a href="https://on-official-sjb.com">世界杯</a> 相关页面获取更完整的赛程、球队与统计。对于研究者或内容创作者，也可利用结构化的时间线与关键词，快速组织素材。</p>
+    </section>
+
+    <!-- 提示 / 注意 -->
+    <div class="tip-box">
+      <h3>📌 可信但克制的访问说明</h3>
+      <p>本页面提供的是基于公开知识的结构化摘要，不包含实时比分、博彩信息或未经核实的传闻。所有数据与背景均以官方记录与权威媒体为参考。如需获取最新赛程、官方公告或深度分析，建议直接浏览 <a href="https://on-official-sjb.com">世界杯</a> 相关版块，并核对信息来源的时效性与准确性。请合理分配阅读时间，避免过度依赖单一页面。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <section class="faq-mini">
+      <h3>常见查询摘要</h3>
+      <div class="faq-item">
+        <div class="faq-question">哪届世界杯参赛队最多？</div>
+        <div class="faq-answer">2026年将由48支球队参加，此前的纪录为32支（1998–2022年）。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">卫冕冠军的表现如何？</div>
+        <div class="faq-answer">历史上只有意大利（1934、1938）和巴西（1958、1962）实现连冠，多数卫冕冠军在下一届止步小组赛或淘汰赛早期。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">哪届赛事进球最多？</div>
+        <div class="faq-answer">1954年瑞士世界杯场均进球5.38个，为历史最高；1990年意大利世界杯场均2.21个，为最低。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">如何查找某届赛事的完整数据？</div>
+        <div class="faq-answer">可通过 <a href="https://on-official-sjb.com">世界杯</a> 页面的年代或国家分类入口，定位到对应届次的赛程、阵容与技术统计。</div>
+      </div>
+    </section>
+
+    <!-- 简洁说明 / 免责性质 -->
+    <div class="disclaimer">
+      本页面为辅助性信息摘要，内容基于公开资料整理，不构成官方立场。
+      具体赛事信息请以实时官方渠道为准。
+      延伸阅读：<a href="https://on-official-sjb.com">世界杯</a> 综合页面。
+    </div>
+  </main>
+</body>
+</html>
