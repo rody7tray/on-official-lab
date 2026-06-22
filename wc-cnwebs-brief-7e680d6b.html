@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>持续关注 · 世界杯 | 再次访问与收藏指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f6f8;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* hero */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid #e9edf2;
+            transition: box-shadow 0.2s;
+        }
+
+        .hero:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+
+        .hero .label {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #5b6f84;
+            background: #eef2f6;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            color: #0f1b2a;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #3f4e60;
+            max-width: 680px;
+            margin-bottom: 1.6rem;
+        }
+
+        .hero .highlight-link {
+            font-size: 1.05rem;
+        }
+
+        .hero a {
+            color: #1f5b9e;
+            text-decoration: none;
+            border-bottom: 1px solid #cdd8e4;
+            font-weight: 500;
+            transition: color 0.15s, border-color 0.15s;
+        }
+
+        .hero a:hover {
+            color: #0a3b6e;
+            border-bottom-color: #0a3b6e;
+        }
+
+        /* grid sections */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 2rem 2rem 2.2rem;
+            border: 1px solid #e6eaef;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.03);
+            border-color: #d3dce8;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.9rem;
+            color: #132130;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card p, .card li {
+            font-size: 0.98rem;
+            color: #2f4155;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .card li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: #5b7b9e;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .card .subnote {
+            margin-top: 0.8rem;
+            font-size: 0.88rem;
+            color: #596e81;
+            padding-top: 0.6rem;
+            border-top: 1px solid #edf1f6;
+        }
+
+        /* single wider card */
+        .section-single {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 2rem 2.2rem 2.3rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e6eaef;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .section-single h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #132130;
+        }
+
+        .section-single p {
+            margin-bottom: 1rem;
+            color: #2f3f53;
+        }
+
+        .section-single a {
+            color: #1f5b9e;
+            text-decoration: none;
+            border-bottom: 1px solid #cdd8e4;
+            font-weight: 500;
+        }
+
+        .section-single a:hover {
+            color: #0a3b6e;
+            border-bottom-color: #0a3b6e;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #1b2c3f;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-item .small-meta {
+            font-size: 0.85rem;
+            color: #5b6e7f;
+        }
+
+        /* bottom links */
+        .bottom-links {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 1.6rem 2rem;
+            border: 1px solid #e6eaef;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .bottom-links .tagline {
+            font-size: 0.95rem;
+            color: #3f5368;
+        }
+
+        .bottom-links .link-group {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .bottom-links a {
+            color: #1f5b9e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.1s;
+        }
+
+        .bottom-links a:hover {
+            border-bottom-color: #1f5b9e;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #6b7f92;
+            letter-spacing: 0.3px;
+        }
+
+        /* responsive */
+        @media (max-width: 720px) {
+            body { padding: 1.2rem; }
+            .hero { padding: 2rem 1.5rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .grid-2 { grid-template-columns: 1fr; gap: 1.2rem; }
+            .section-single { padding: 1.6rem; }
+            .bottom-links { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .bottom-links .link-group { gap: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.5rem; }
+            .hero p { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <span class="label">常回 · 常新</span>
+        <h1>再次访问 & 收藏<br>持续关注 <a href="https://wc-cnwebs-fifa.com">世界杯</a></h1>
+        <p>
+            赛事日程、球队动态与深度内容在赛季前后密集更新。将本页加入浏览器书签或设为常用入口，便于下次直接回看。已订阅用户可通过收藏夹一键定位，无需重复搜索。
+        </p>
+        <div class="highlight-link">
+            <span>快捷通道 → </span><a href="https://wc-cnwebs-fifa.com">世界杯</a>
+            <span style="margin-left: 0.6rem; font-size: 0.85rem; color: #5b6f84;">· 保持跟踪</span>
+        </div>
+    </div>
+
+    <!-- 优势区：两列 -->
+    <div class="grid-2">
+        <div class="card">
+            <h3>📌 收藏即索引</h3>
+            <ul>
+                <li>地址栏直达，减少中间跳转</li>
+                <li>浏览器书签同步，桌面与移动端一致</li>
+                <li>无弹窗、无重定向干扰</li>
+            </ul>
+            <div class="subnote">再次访问时自动加载最新内容，无需重新查找入口。</div>
+        </div>
+        <div class="card">
+            <h3>🔁 回访价值</h3>
+            <ul>
+                <li>赛历更新、分组信息变动实时反映</li>
+                <li>历史赛果与后续对阵同页面查阅</li>
+                <li>专题文章按赛事阶段逐步解锁</li>
+            </ul>
+            <div class="subnote">一次收藏，后续每次访问都处于信息前沿。</div>
+        </div>
+    </div>
+
+    <!-- 说明区：宽卡片 -->
+    <div class="section-single">
+        <h2>持续关注：从收藏到习惯</h2>
+        <p>
+            <a href="https://wc-cnwebs-fifa.com">世界杯</a> 相关资讯的发布周期跨度长，从预选赛到正赛、从小组抽签到淘汰赛，关键节点分散。建议在浏览器中为此页单独建立书签文件夹（如「赛事关注」），或使用标签页固定功能。对于经常使用同一设备的用户，添加到主屏幕（iOS / Android）可进一步缩短访问路径。
+        </p>
+        <p>
+            非赛期页面仍会保留基础架构与历史资料，方便回看往届数据、球队档案与经典比赛记录。收藏后即使数月不访问，再次打开依然能快速定位当前阶段的核心内容，无需从零开始检索。
+        </p>
+        <p>
+            若希望收到重大节点提醒（如抽签、赛程发布），可将页面提示区域作为参考锚点 —— 部分更新会在页面顶部标注日期与摘要。保持关注即获得时间线上的连贯性。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要区 -->
+    <div class="section-single" style="background: #fafbfc;">
+        <h2>常见疑问 · 简短说明</h2>
+        <div class="faq-item">
+            <strong>如何快速再次访问？</strong>
+            <p>在桌面浏览器中按 Ctrl+D (Windows) 或 Cmd+D (Mac) 添加书签；移动端 Safari / Chrome 使用「加入书签」或「添加到主屏幕」。 <a href="https://wc-cnwebs-fifa.com">世界杯</a> 网址可直接保存。</p>
+            <span class="small-meta">— 操作一次，长期有效</span>
+        </div>
+        <div class="faq-item">
+            <strong>页面内容多久更新一次？</strong>
+            <p>关键节点（抽签、赛果、排名变动）通常在 24 小时内同步；赛期日更。非赛期按周维护基础信息。</p>
+            <span class="small-meta">— 以顶部标注日期为准</span>
+        </div>
+        <div class="faq-item">
+            <strong>收藏后会不会丢失？</strong>
+            <p>只要书签指向的网址不变（<a href="https://wc-cnwebs-fifa.com">世界杯</a>），即可持续访问。建议定期清理浏览器缓存中的过期书签，并确认网络环境可正常解析域名。</p>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="bottom-links">
+        <div class="tagline">
+            <span>📋 持续跟踪 · 一键回访</span>
+        </div>
+        <div class="link-group">
+            <a href="https://wc-cnwebs-fifa.com">世界杯</a>
+            <a href="#">赛历概要</a>
+            <a href="#">球队索引</a>
+            <a href="#">往届数据</a>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        建议将当前页面加入书签 · 再次访问不迷路
+    </div>
+
+</div>
+</body>
+</html>
